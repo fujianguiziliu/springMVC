@@ -12,7 +12,10 @@ public class HelloController implements Controller{
 	public ModelAndView handleRequest(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		System.out.println("hello");
-		return null;
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/msg.jsp");//设置视图名称
+		mv.addObject("msg", "东坡真帅");//设置模型数据
+		return mv;
 	}
 
 }
